@@ -85,8 +85,7 @@ end
 Events.OnZombieUpdate.Remove(RavagerZed.coreFunc)
 Events.OnZombieUpdate.Add(RavagerZed.coreFunc)
 
-local zed = getPointer():getZombie()
-print( zed:getVariableBoolean('isRavagerZed'))
+
 -----------------------            ---------------------------
 
 -----------------------            ---------------------------
