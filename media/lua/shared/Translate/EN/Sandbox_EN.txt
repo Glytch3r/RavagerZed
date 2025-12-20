@@ -1,0 +1,59 @@
+Sandbox_EN = {
+
+
+
+
+    Sandbox_RavagerZed = "Ravager Zed ",
+
+	Sandbox_RavagerZed_RavagerInfection = "Ravager Infection Delay",
+	Sandbox_RavagerZed_RavagerInfection_tooltip = "Infection Variant Mortality Delay (In Game Minutes)",
+
+	Sandbox_RavagerZed_DistToChase = "Distance To Chase",
+	Sandbox_RavagerZed_DistToChase_tooltip = "Minimum Distance Before Ravager Zed Chaces Target",
+
+	Sandbox_RavagerZed_SeenTime = "Chase Delay Time",
+	Sandbox_RavagerZed_SeenTime_tooltip = "Minimum Time Before Ravager Zed Chaces Target. Set to 0 To Disable Feature",
+
+	Sandbox_RavagerZed_AlertIndicator = "Drop Rate",
+	Sandbox_RavagerZed_AlertIndicator_tooltip = "Overhead Text While Ravager Is Observing The Target. Leave Blank To Disable Feature",
+
+	Sandbox_RavagerZed_SFXRate = "Sound Effects Rate",
+	Sandbox_RavagerZed_SpawnRate = "Spawn Rate",
+
+	Sandbox_RavagerZed_DeathRewards = "Death Rewards",
+	Sandbox_RavagerZed_DropRate = "Drop Rate",
+
+	Sandbox_RavagerZed_DeathSpawn = "Death Spawn",
+	Sandbox_RavagerZed_DeathSpawn_tooltip  = "Spawn Ravager Upon Death Caused By Ravager Infection",
+
+	Sandbox_RavagerZed_PlayerInfectPlayer = "Player Ravager Infects Target",
+	Sandbox_RavagerZed_PlayerInfectPlayer_tooltip = "Admins Wearing Ravager Skin Will Infect Other Players When They Attack Them",
+
+
+
+	Sandbox_RavagerZed_KillsToLearnCraftDummy = "Sculpture Kill Requirement",
+	Sandbox_RavagerZed_KillsToLearnCraftDummy_tooltip = "Ravager Zed Kill Count Requirement to Craft Ravager Sculpture",
+	Sandbox_RavagerZed_KillsToLearnCraftSword = "Sword Kill Requirement",
+	Sandbox_RavagerZed_KillsToLearnCraftSword_tooltip = "Ravager Zed Kill Count Requirement to Craft Sword",
+	Sandbox_RavagerZed_KillsToLearnCraftArmor = "Armor Kill Requirement",
+	Sandbox_RavagerZed_KillsToLearnCraftArmor_tooltip = "Ravager Zed Kill Count Requirement to Craft Armor",
+	Sandbox_RavagerZed_KillsToLearnCraftSpear = "Spear Kill Requirement",
+	Sandbox_RavagerZed_KillsToLearnCraftSpear_tooltip = "Ravager Zed Kill Count Requirement to Craft Spear",
+	Sandbox_RavagerZed_KillsToLearnCraftEgg = "Egg Kill Requirement",
+	Sandbox_RavagerZed_KillsToLearnCraftEgg_tooltip = "Ravager Zed Kill Count Requirement to Craft Preserved Egg",
+	Sandbox_RavagerZed_KillsToLearnCraftMask = "Mask Kill Requirement",
+	Sandbox_RavagerZed_KillsToLearnCraftMask_tooltip = "Ravager Zed Kill Count Requirement to Craft Face Mask",
+	Sandbox_RavagerZed_KillsToLearnCraftTrophy = "Throphy Kill Requirement",
+	Sandbox_RavagerZed_KillsToLearnCraftTrophy_tooltip = "Ravager Zed Kill Count Requirement to Craft Head Thropy",
+	Sandbox_RavagerZed_KillsToLearnCraftAnatomy  = "Anatomy Kill Requirement",
+	Sandbox_RavagerZed_KillsToLearnCraftAnatomy_tooltip  = "Ravager Zed Kill Count Requirement to Craft Anatomy Painting",
+
+
+
+
+
+
+
+}
+
+

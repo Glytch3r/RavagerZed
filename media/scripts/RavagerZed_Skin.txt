@@ -1,0 +1,13 @@
+module Base {
+
+
+	item RavagerZed
+    {
+        DisplayCategory = Clothing,
+        Type = Clothing,
+        ClothingItem = RavagerZed,
+        BodyLocation = BodyCostume,
+        Icon = RavagerZed,
+    }
+
+}

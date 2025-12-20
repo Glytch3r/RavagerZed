@@ -1,0 +1,13 @@
+
+module Base {
+
+	sound  RavagerZed_Grunt_1 { category = UI, clip { file = media/sound/RavagerZed_Grunt_1.ogg, distanceMax = 80, is3D = true, volume = 0.5, maxGain = 1, maxInstancesPerEmitter = 2, } }
+	sound  RavagerZed_Grunt_2 { category = UI, clip { file = media/sound/RavagerZed_Grunt_2.ogg, distanceMax = 80, is3D = true, volume = 0.5, maxGain = 1, maxInstancesPerEmitter = 2, } }
+	sound  RavagerZed_Roar_1 { category = UI, clip { file = media/sound/RavagerZed_Roar_1.ogg, distanceMax = 80, is3D = true, volume = 0.5, maxGain = 1, maxInstancesPerEmitter = 2, } }
+	sound  RavagerZed_Roar_2 { category = UI, clip { file = media/sound/RavagerZed_Roar_2.ogg, distanceMax = 80, is3D = true, volume = 0.5, maxGain = 1, maxInstancesPerEmitter = 2, } }
+	sound  RavagerZed_Stars_1 { category = UI, clip { file = media/sound/RavagerZed_Stars_1.ogg, distanceMax = 80, is3D = true, volume = 0.5, maxGain = 1, maxInstancesPerEmitter = 2, } }
+	sound  RavagerZed_Stars_2 { category = UI, clip { file = media/sound/RavagerZed_Stars_2.ogg, distanceMax = 80, is3D = true, volume = 0.5, maxGain = 1, maxInstancesPerEmitter = 2, } }
+	sound  RavagerZed_Stars_3 { category = UI, clip { file = media/sound/RavagerZed_Stars_3.ogg, distanceMax = 80, is3D = true, volume = 0.5, maxGain = 1, maxInstancesPerEmitter = 2, } }
+}
+
+

@@ -1,0 +1,25 @@
+ContextMenu_EN = {
+
+	ContextMenu_RavagerZed_Debug = "Ravager Zed Debug",
+	ContextMenu_RavagerZed_Skin = "Skin",
+	ContextMenu_RavagerZed_WearSkin = "Wear Skin",
+	ContextMenu_RavagerZed_RemoveSkin = "Remove Skin",
+	ContextMenu_RavagerZed_Spawn = "Spawn",
+	ContextMenu_RavagerZed_Emote = "Emote",
+	ContextMenu_RavagerZed_KillRavager = "Kill Nearby Ravager Zeds",
+	ContextMenu_RavagerZed_KillOther = "Kill Other Nearby Zeds",
+	ContextMenu_RavagerZed_Infected = "Infected",
+	ContextMenu_RavagerZed_TimeLeft= "Time Left",
+	ContextMenu_RavagerZed_Clear = "Clear Ravager Infection",
+	ContextMenu_RavagerZed_DebugPrints = "Admin Debug Prints",
+	ContextMenu_RavagerZed_ClipXY = "Clip Coordinates",
+	ContextMenu_RavagerZed_ClipXYTip = "Stores X and Y Coordinates to Clipboard. For Setting Up Nest Locations Option",
+	ContextMenu_RavagerZed_ArmorAlt = "Armor Style",
+
+}
+
+
+
+
+
+

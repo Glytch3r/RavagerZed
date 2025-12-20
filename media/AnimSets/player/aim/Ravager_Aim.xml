@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<animNode x_extends="aim_default.xml">
+	<m_Name>Ravager_Aim</m_Name>
+	<m_AnimName>Ravager_Aim</m_AnimName>
+
+	<m_Conditions>
+		<m_Name>isRavagerPl</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_BoolValue>true</m_BoolValue>
+	</m_Conditions>
+
+	<m_Transitions>
+		<m_Target>Idle2Handed</m_Target>
+		<m_AnimName>Ravager_Aim</m_AnimName>
+	</m_Transitions>
+	<m_Transitions>
+		<m_Target>sneakIdle2handed</m_Target>
+		<m_AnimName>Ravager_Aim</m_AnimName>
+	</m_Transitions>
+	<m_Transitions>
+		<m_Target>sneakIdleLow2handed</m_Target>
+		<m_AnimName>Ravager_Aim</m_AnimName>
+	</m_Transitions>
+</animNode>
