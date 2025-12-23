@@ -3,6 +3,8 @@
 	<m_Name>Ravager_zombieWalkSlow</m_Name>
 	<m_AnimName>Ravager_Walk</m_AnimName>
 
+	<m_SpeedScale>0.05</m_SpeedScale>
+
 	<m_Priority>4</m_Priority>
 	<m_Conditions>
 		<m_Name>isRavagerZed</m_Name>
@@ -10,11 +12,12 @@
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>
 
-<!-- 	<m_Conditions>
+	<m_Conditions>
 		<m_Name>zombieWalkType</m_Name>
 		<m_Type>STRING</m_Type>
-		<m_StringValue>slow1</m_StringValue>
-	</m_Conditions> -->
+		<m_StringValue>Ravager</m_StringValue>
+	</m_Conditions>
+
 	<m_Events>
 		<m_EventName>Footstep</m_EventName>
 		<m_TimePc>0.15</m_TimePc>

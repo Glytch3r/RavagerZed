@@ -56,7 +56,7 @@ function RavagerZed.setStats(zed)
         if RavagerZed.isRavagerZed(zed) and zed:getModData()['RavagerZed_Init'] == nil then
             local sandOpt = getSandboxOptions()
 
-            sandOpt:set("ZombieLore.Speed", 2) 		-- 1 sprinters  		2 fast shamblers  	3 shamblers 		4 random
+            --sandOpt:set("ZombieLore.Speed", 2) 		-- 1 sprinters  		2 fast shamblers  	3 shamblers 		4 random
             sandOpt:set("ZombieLore.Strength",1)  	-- 1 superhuman 		2 normal 			3 weak 				4 random
             sandOpt:set("ZombieLore.Toughness",1)	-- 1 tough 				2 normal 			3 fragile 			4 random
             sandOpt:set("ZombieLore.Cognition",1) 	-- 1 navigate + doors 	2 navigate 			3 basic navigation 	4 random
@@ -65,15 +65,15 @@ function RavagerZed.setStats(zed)
             sandOpt:set("ZombieLore.Hearing",1) 	-- 1 pinpoint 			2 normal 			3 poor 				4 random
 
 
-
             --RavagerZed.setTurnSpeed(zed, 2)
             zed:setVariable('isRavagerZed', 'true')
+            zed:setWalkType('Ravager')
             zed:makeInactive(true);
             zed:makeInactive(false);
-  
+            
             --zed:dressInPersistentOutfit("RavagerZed")
             RavagerZed.cleanUp(zed)
-            zed:setTurnDelta(12)
+            --zed:setTurnDelta(0.5)
             zed:getModData()['RavagerZed_Init'] = true
         end
     end

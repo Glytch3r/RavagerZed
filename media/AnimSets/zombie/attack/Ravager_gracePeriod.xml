@@ -1,8 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <animNode>
-	<m_Name>gracePeriod</m_Name>
-	<m_SpeedScale>0.80</m_SpeedScale>
-	<m_AnimName>Zombie_Idle_Lunge</m_AnimName>
+	<m_Name>Ravager_gracePeriod</m_Name>
+	<m_AnimName>Ravager_Taunt</m_AnimName>
+	<m_SpeedScale>0.80</m_SpeedScale>  
+
+	<m_Priority>4</m_Priority>
+	<m_Conditions>
+		<m_Name>isRavagerZed</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_BoolValue>true</m_BoolValue>
+	</m_Conditions>
+
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
 	<m_BlendTime>0.20</m_BlendTime>
 	<m_Conditions>

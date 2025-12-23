@@ -56,7 +56,23 @@ function RavagerZed.isStepped(zed)
 	return zed:isBeingSteppedOn()
 end
 
-
+function RavagerZed.stagStep(zed)
+    if not zed then return end
+	if RavagerZed.isStepped(zed) then
+		local sq = zed:getSquare() 
+		if not sq then return end
+		for i=0, sq:getMovingObjects():size()-1 do
+			local targ = sq:getMovingObjects():get(i);
+			if instanceof(targ, "IsoPlayer") then
+				targ:setBumpType("stagger");
+				targ:setVariable("BumpDone", true);
+				targ:setVariable("BumpFall", true);
+				targ:setVariable("BumpFallType", "pushedbehind");
+				targ:reportEvent("wasBumped")
+			end
+		end
+	end
+end
 
 
 

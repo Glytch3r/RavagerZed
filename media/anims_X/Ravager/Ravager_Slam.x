@@ -7659,7 +7659,7 @@ Frame Body {
  }
 }
 
-AnimationSet Ravager_Grapple {
+AnimationSet Ravager_Slam {
  
 
  Animation {

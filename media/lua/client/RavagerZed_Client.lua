@@ -44,10 +44,29 @@ function RavagerZed.isShouldObserve(zed)
 
 end
 
+
+
+function RavagerZed.isStars(targ)
+    if not targ then return false end
+    local isStars = false
+    local fac = Faction.getPlayerFaction(targ) 
+    if not fac then return false end
+    local facName = fac:getName() 
+    if facName then
+        facName = string.lower(facName) 
+        isStars = facName == "stars" or  facName == "s.t.a.r.s." or  facName == "s.t.a.r.s" 
+    end
+    return isStars
+end
+
+
 function RavagerZed.coreFunc(zed)
     if not zed then return end
+    local targ = zed:getTarget()
 
     if RavagerZed.isRavagerZed(zed) then
+
+
         if zed:getModData()['RavagerZed_Init'] == nil then
             RavagerZed.setStats(zed)
         end
@@ -55,23 +74,29 @@ function RavagerZed.coreFunc(zed)
         if not zed:getVariableBoolean('isRavagerZed') then
             zed:setVariable('isRavagerZed', true)
         end
-
-        local targ = zed:getTarget()
-        local isShouldObserve = RavagerZed.isShouldObserve(zed)
-        if isShouldObserve and targ then
-            if not zed:isUseless() then
-                zed:setUseless(true)
-            end
-            if targ then
-                zed:faceLocation(targ:getX(), targ:getY())
-            end
-        else
-            if zed:isUseless() then
-                zed:setUseless(false)
-            end
+        if RavagerZed.getWalkType(zed) ~= "Ravager" then
+            zed:setWalkType('Ravager')
         end
 
-
+        if SandboxVars.RavagerZed.stagStep and not zed:isDead() then 
+            RavagerZed.stagStep(zed)
+        end   
+        local Ravager_Slam = false
+        local isStars = false
+        if targ then
+            isStars = RavagerZed.isStars(targ)
+            Ravager_Slam = isStars or not targ:isMoving()
+        end
+        zed:getModData()['Ravager_Slam'] = zed:getModData()['Ravager_Slam'] or false
+        if zed:getVariableBoolean('Ravager_Slam') ~= Ravager_Slam then
+            if Ravager_Slam and not zed:getModData()['Ravager_Slam']  then
+                zed:setVariable('Ravager_Slam', false)
+                zed:setHitReaction("Ravager_Taunt") 
+                zed:getModData()['Ravager_Slam'] = Ravager_Slam
+            end
+       
+            zed:setVariable('Ravager_Slam', Ravager_Slam)
+        end
 
 
     else
@@ -139,6 +164,33 @@ Commands.RavagerZed.isRavagerPl = function(args)
         end
     end
     --player:resetModelNextFrame();
+end
+
+Commands.RavagerZed.stagPl = function(args)
+    local pl = getPlayer();
+    local targ = getPlayerByOnlineID(args.id)
+    if targ ~= nil then
+        if pl ~= targ then
+           
+            local pl = getPlayer()
+            pl:setBumpType("pushedbehind");   --pushedFront
+            pl:setVariable("BumpFall", true);
+            pl:setVariable("BumpFallType", "pushedbehind");    --pushedFront
+
+        end
+    end
+end
+
+Commands.RavagerZed.grapplePl = function(args)
+    local pl = getPlayer();
+    local targ = getPlayerByOnlineID(args.id)
+    if targ ~= nil then
+        if pl ~= targ then
+           
+            pl:setVariable("Ravager", "Ravager_GrappleReact");
+
+        end
+    end
 end
 
 

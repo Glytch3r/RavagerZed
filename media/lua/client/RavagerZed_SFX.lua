@@ -29,13 +29,13 @@
 RavagerZed = RavagerZed or {}
 
 RavagerZed.sfxZedList = {
-	'RavagerZed_Grunt_1',
-	'RavagerZed_Grunt_2',
-	'RavagerZed_Roar_1',
-	'RavagerZed_Roar_2',
-	'RavagerZed_Stars_1',
-	'RavagerZed_Stars_2',
-	'RavagerZed_Stars_3',
+	"RavagerZed_Grunt_1",
+	"RavagerZed_Grunt_2",
+	"RavagerZed_Roar_1",
+	"RavagerZed_Roar_2",
+	"RavagerZed_Stars_1",
+	"RavagerZed_Stars_2",
+	"RavagerZed_Stars_3",
 }
 
 function RavagerZed.VolumeHandler(dist, range)
@@ -47,7 +47,6 @@ function RavagerZed.VolumeHandler(dist, range)
         return 1 - (dist / range)
     end
 end
-
 
 
 function RavagerZed.isOnAlert(zed)
@@ -142,7 +141,6 @@ end
 
 
 
-
 function RavagerZed.keypress(key)
 	local pl = getPlayer()
 	if not RavagerZed.isRavagerPl(pl) then return end
@@ -159,10 +157,29 @@ end
 Events.OnKeyPressed.Remove(RavagerZed.keypress)
 Events.OnKeyPressed.Add(RavagerZed.keypress)
 
+function RavagerZed.playStars(zed)
+	if not zed or not RavagerZed.isRavagerZed(zed) then return end
+	RavagerZed.playSFX(zed, 'RavagerZed_Stars_'..tostring(ZombRand(1,4)))
+end
+
+function RavagerZed.playRoar(zed)
+	if not zed or not RavagerZed.isRavagerZed(zed) then return end
+	RavagerZed.playSFX(zed, 'RavagerZed_Roar_'..tostring(ZombRand(1,3)))
+end
+function RavagerZed.playHitSfx(zed)
+	if not zed or not RavagerZed.isRavagerZed(zed) then return end
+	RavagerZed.playSFX(zed, 'RavagerZed_Grunt_1')
+end
+
+function RavagerZed.playDeathSfx(zed)
+	if not zed or not RavagerZed.isRavagerZed(zed) then return end
+	RavagerZed.playSFX(zed, 'RavagerZed_Grunt_2')
+end
+
 
 function RavagerZed.OnZombieDead(zed)
-	if not RavagerZed.isRavagerZed(zed) then return end
-	RavagerZed.playSFX(zed, "RavagerZed_Hurt")
+	if not zed or not RavagerZed.isRavagerZed(zed) then return end
+	RavagerZed.playDeathSfx(zed)
 end
 Events.OnZombieDead.Remove(RavagerZed.OnZombieDead)
 Events.OnZombieDead.Add(RavagerZed.OnZombieDead)

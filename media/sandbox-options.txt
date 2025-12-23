@@ -21,3 +21,15 @@ option RavagerZed.SeenTime
 	type = double,	 min = 0,  max = 40,  default = 4,
 	page = RavagerZed, translation = RavagerZed_SeenTime,
 }
+
+option RavagerZed.HP
+{
+	type = double,	 min = 0.1,  max = 9999,  default = 100,
+	page = RavagerZed, translation = RavagerZed_HP,
+}
+
+option RavagerZed.dmgMult
+{
+	type = double,	 min = -100,  max = 100,  default = 1,
+	page = RavagerZed, translation = RavagerZed_dmgMult,
+}
