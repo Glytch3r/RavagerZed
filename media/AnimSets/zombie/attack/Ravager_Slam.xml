@@ -43,4 +43,10 @@
 		<m_Time>End</m_Time>
 		<m_ParameterValue>ZombieBiteDone=true</m_ParameterValue>
 	</m_Events>
+
+	<m_Events>
+		<m_EventName>SetVariable</m_EventName>
+		<m_Time>End</m_Time>
+		<m_ParameterValue>Ravager_Slam=false</m_ParameterValue>
+	</m_Events>
 </animNode>

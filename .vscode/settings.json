@@ -27,17 +27,7 @@
         "pickerGroup.foreground": "#ff3126",
         "list.activeSelectionBackground": "#fa24194d",
         "panelTitle.activeBorder": "#ff3126",
-        "activityBar.activeBorder": "#fa2419",
-        "statusBarItem.remoteBackground": "#ff3126",
-        "statusBarItem.remoteForeground": "#ffffff",
-        "statusBar.background": "#fa2419",
-        "statusBar.foreground": "#ffffff",
-        "statusBar.border": "#fa2419",
-        "statusBar.debuggingBackground": "#fa2419",
-        "statusBar.debuggingForeground": "#ffffff",
-        "statusBar.debuggingBorder": "#fa2419",
-        "activityBarBadge.foreground": "#ffffff",
-        "activityBarBadge.background": "#fa2419"
+        "activityBar.activeBorder": "#fa2419"
     },
     "projectColors.mainColor": "#fa2419",
     "window.title": "RavagerZed",

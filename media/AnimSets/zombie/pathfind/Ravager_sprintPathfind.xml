@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<animNode x_extends="sprintPathfind.xml">
+<animNode x_extends="Ravager_pathfind.xml">
 	<m_Name>Ravager_sprintPathfind</m_Name>
 	<m_AnimName>Ravager_Run</m_AnimName>
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
@@ -13,16 +13,6 @@
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>
-
-
-
-
-	<m_Conditions>
-		<m_Name>zombieWalkType</m_Name>
-		<m_Type>STRING</m_Type>
-		<m_StringValue>Ravager</m_StringValue>
-	</m_Conditions> 
-
 
 	<m_Events>
 		<m_EventName>Footstep</m_EventName>

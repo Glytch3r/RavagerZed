@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <animNode>
 	<m_Name>Ravager_pathfindWait</m_Name>
-	<!-- <m_AnimName>Ravager_Idle</m_AnimName> -->
-	<m_AnimName>Ravager_Taunt</m_AnimName>
+	<m_AnimName>Ravager_Idle</m_AnimName> 
+	<!-- <m_AnimName>Ravager_Taunt</m_AnimName> -->
 
 
 	<m_Priority>4</m_Priority>

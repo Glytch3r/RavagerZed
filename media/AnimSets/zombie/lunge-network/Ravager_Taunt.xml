@@ -9,8 +9,21 @@
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>
-
+	<m_Conditions>
+		<m_Name>targetSeenTime</m_Name>
+		<m_Type>GTR</m_Type>
+		<m_FloatValue>30</m_FloatValue>
+	</m_Conditions>
+	<m_Conditions>
+		<m_Name>Ravager_Slam</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_BoolValue>false</m_BoolValue>
+	</m_Conditions>
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
-
+	<m_Events>
+		<m_EventName>SetVariable</m_EventName>
+		<m_Time>Start</m_Time>
+		<m_ParameterValue>Ravager_Slam=true</m_ParameterValue>
+	</m_Events>
 </animNode>
 

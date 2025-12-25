@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<animNode x_extends="Ravager_AlertFront.xml">
+	<m_Name>Ravager_TurnR45</m_Name>
+	<m_AnimName>Bob_IdleTurn45R</m_AnimName>
+	<m_Conditions>
+		<m_Name>TurnAlertedValue</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_StringValue>45R</m_StringValue>
+	</m_Conditions>
+</animNode>

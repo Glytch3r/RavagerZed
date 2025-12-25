@@ -87,6 +87,7 @@ function RavagerZed.coreFunc(zed)
             isStars = RavagerZed.isStars(targ)
             Ravager_Slam = isStars or not targ:isMoving()
         end
+--[[ 
         zed:getModData()['Ravager_Slam'] = zed:getModData()['Ravager_Slam'] or false
         if zed:getVariableBoolean('Ravager_Slam') ~= Ravager_Slam then
             if Ravager_Slam and not zed:getModData()['Ravager_Slam']  then
@@ -97,7 +98,7 @@ function RavagerZed.coreFunc(zed)
        
             zed:setVariable('Ravager_Slam', Ravager_Slam)
         end
-
+ ]]
 
     else
         if zed:getVariableBoolean('isRavagerZed') then

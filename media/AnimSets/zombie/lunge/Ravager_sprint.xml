@@ -6,19 +6,11 @@
 	<m_SpeedScale>0.90</m_SpeedScale>
 	<m_Conditions />
 
-
 	<m_Priority>4</m_Priority>
 	<m_Conditions>
 		<m_Name>isRavagerZed</m_Name>
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
-	</m_Conditions>
-
-
-	<m_Conditions>
-		<m_Name>zombieWalkType</m_Name>
-		<m_Type>STRING</m_Type>
-		<m_StringValue>Ravager</m_StringValue>
 	</m_Conditions>
 
 	<m_Events>
