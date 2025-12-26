@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <animNode>
-	<m_Name>Ravager_Slam</m_Name>
-	<m_AnimName>Ravager_Slam</m_AnimName>
+	<m_Name>Ravager_ChokeSlam</m_Name>
+	<m_AnimName>Ravager_ChokeSlam</m_AnimName>
 
 	<m_Priority>4</m_Priority>
 	<m_Conditions>
@@ -38,15 +38,15 @@
 		<m_ParameterValue>PlayerHitReaction=Ravager_SlamReact</m_ParameterValue>
 	</m_Events>
 
-	<m_Events>
-		<m_EventName>SetVariable</m_EventName>
-		<m_Time>End</m_Time>
-		<m_ParameterValue>ZombieBiteDone=true</m_ParameterValue>
-	</m_Events>
 
 	<m_Events>
 		<m_EventName>SetVariable</m_EventName>
 		<m_Time>End</m_Time>
 		<m_ParameterValue>Ravager_Slam=false</m_ParameterValue>
+	</m_Events>
+	<m_Events>
+		<m_EventName>SetVariable</m_EventName>
+		<m_Time>End</m_Time>
+		<m_ParameterValue>ZombieBiteDone=true</m_ParameterValue>
 	</m_Events>
 </animNode>

@@ -12,7 +12,7 @@
 		<m_Type>STRING</m_Type>
 		<m_StringValue>Ravager_SlamReact</m_StringValue>
 	</m_Conditions>
-	
+
 <!-- 	<m_Events>
 		<m_EventName>Death</m_EventName>
 		<m_Time>End</m_Time>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <animNode>
 	<m_Name>Ravager_enddeath</m_Name>
-	<m_AnimName>Ravager_Slam</m_AnimName>
+	<m_AnimName>Ravager_Idle</m_AnimName>
 
 	<m_Priority>4</m_Priority>
 	<m_Conditions>

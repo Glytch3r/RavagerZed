@@ -63,10 +63,17 @@ end
 function RavagerZed.coreFunc(zed)
     if not zed then return end
     local targ = zed:getTarget()
-
+    if not targ and zed:getVariableBoolean('Ravager_Slam') == true then
+        zed:setVariable('Ravager_Slam', false)
+    end
     if RavagerZed.isRavagerZed(zed) then
-
-
+        local react = zed:getHitReaction() 
+        if react and react == "Ravager_Slam" then
+            if targ and getCore():getDebug() then 
+                targ:addLineChatElement(tostring("Danger!"))
+            end
+            zed:setVariable('Ravager_Slam', true)
+        end
         if zed:getModData()['RavagerZed_Init'] == nil then
             RavagerZed.setStats(zed)
         end
@@ -74,19 +81,17 @@ function RavagerZed.coreFunc(zed)
         if not zed:getVariableBoolean('isRavagerZed') then
             zed:setVariable('isRavagerZed', true)
         end
-        if RavagerZed.getWalkType(zed) ~= "Ravager" then
-            zed:setWalkType('Ravager')
-        end
-
+   
+   --[[  
         if SandboxVars.RavagerZed.stagStep and not zed:isDead() then 
-            RavagerZed.stagStep(zed)
+         
         end   
-        local Ravager_Slam = false
+    local Ravager_Slam = false
         local isStars = false
         if targ then
             isStars = RavagerZed.isStars(targ)
             Ravager_Slam = isStars or not targ:isMoving()
-        end
+        end ]]
 --[[ 
         zed:getModData()['Ravager_Slam'] = zed:getModData()['Ravager_Slam'] or false
         if zed:getVariableBoolean('Ravager_Slam') ~= Ravager_Slam then

@@ -29,7 +29,7 @@
 	<m_Events>
 		<m_EventName>SetVariable</m_EventName>
 		<m_Time>Start</m_Time>
-		<m_ParameterValue>PlayerHitReaction=Bite</m_ParameterValue>
+		<m_ParameterValue>PlayerHitReaction=Ravager_Attack</m_ParameterValue>
 	</m_Events>
 
 	<m_Events>
