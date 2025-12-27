@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <animNode x_extends="defaultLunge.xml">
 	<m_Name>Ravager_lunge</m_Name>
-	<m_AnimName>Ravager_Run</m_AnimName>
+	<m_AnimName>Ravager_Walk</m_AnimName>
 
 	<m_Priority>4</m_Priority>
 	<m_Conditions>

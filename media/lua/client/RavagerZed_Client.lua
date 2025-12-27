@@ -59,52 +59,59 @@ function RavagerZed.isStars(targ)
     return isStars
 end
 
+function RavagerZed.setSprinter(zed, isToSprint)
+    if not zed then return end
+
+    local wt = zed:getVariableString("zombieWalkType")
+    if not wt then return end
+
+    local num = string.match(wt, "(%d)$")
+    if not num then return end
+
+    if isToSprint then
+        zed:setWalkType("sprint" .. num)
+    else
+        zed:setWalkType(num)
+    end
+
+    zed:makeInactive(true)
+    zed:makeInactive(false)
+    zed:DoZombieStats()
+end
+
+function RavagerZed.isSprinter(zed)
+    if not zed then return false end
+    local wt = zed:getVariableString("zombieWalkType")
+    if not wt then return false end
+    return string.find(wt, "^sprint") ~= nil
+end
+
+function RavagerZed.isShouldSprint(zed)
+    if not zed then return false end
+    return zed:getVariableBoolean('Ravager_Slam')
+end
 
 function RavagerZed.coreFunc(zed)
     if not zed then return end
-    local targ = zed:getTarget()
-    if not targ and zed:getVariableBoolean('Ravager_Slam') == true then
-        zed:setVariable('Ravager_Slam', false)
-    end
+
     if RavagerZed.isRavagerZed(zed) then
-        local react = zed:getHitReaction() 
-        if react and react == "Ravager_Slam" then
-            if targ and getCore():getDebug() then 
-                targ:addLineChatElement(tostring("Danger!"))
-            end
-            zed:setVariable('Ravager_Slam', true)
+        local isShouldSprint = RavagerZed.isShouldSprint(zed)
+        local isSprinter = RavagerZed.isSprinter(zed)
+
+        zed:setVariable('Ravager_Slam', isShouldSprint)
+        zed:setVariable('isRavagerZed', true)
+
+        if zed:getHitReaction() == "Ravager_Slam" and getCore():getDebug() then
+            zed:addLineChatElement("Danger!")
         end
-        if zed:getModData()['RavagerZed_Init'] == nil then
+
+        if not zed:getModData()['RavagerZed_Init'] then
             RavagerZed.setStats(zed)
         end
 
-        if not zed:getVariableBoolean('isRavagerZed') then
-            zed:setVariable('isRavagerZed', true)
+        if isShouldSprint ~= isSprinter then
+            RavagerZed.setSprinter(zed, isShouldSprint)
         end
-   
-   --[[  
-        if SandboxVars.RavagerZed.stagStep and not zed:isDead() then 
-         
-        end   
-    local Ravager_Slam = false
-        local isStars = false
-        if targ then
-            isStars = RavagerZed.isStars(targ)
-            Ravager_Slam = isStars or not targ:isMoving()
-        end ]]
---[[ 
-        zed:getModData()['Ravager_Slam'] = zed:getModData()['Ravager_Slam'] or false
-        if zed:getVariableBoolean('Ravager_Slam') ~= Ravager_Slam then
-            if Ravager_Slam and not zed:getModData()['Ravager_Slam']  then
-                zed:setVariable('Ravager_Slam', false)
-                zed:setHitReaction("Ravager_Taunt") 
-                zed:getModData()['Ravager_Slam'] = Ravager_Slam
-            end
-       
-            zed:setVariable('Ravager_Slam', Ravager_Slam)
-        end
- ]]
-
     else
         if zed:getVariableBoolean('isRavagerZed') then
             zed:setVariable('isRavagerZed', false)
@@ -113,30 +120,10 @@ function RavagerZed.coreFunc(zed)
     end
 end
 
-Events.OnZombieUpdate.Remove(RavagerZed.coreFunc)
-Events.OnZombieUpdate.Add(RavagerZed.coreFunc)
-
 
 -----------------------            ---------------------------
 
 -----------------------            ---------------------------
-
-Commands.RavagerZed.isRavagerZed = function(args)
-    local source = getPlayer();
-    local player = getPlayerByOnlineID(args.id)
-    local zedID = args.zedID
-    if type(zedID) == 'string' then zedID = tonumber(zedID) end
-    local zed = RavagerZed.findzedID(zedID)
-    if zed ~= nil then
-		if source ~= player then
-			if args.isRavagerZed == 'true' then
-				zed:setVariable('isRavagerZed', 'true');
-			else
-				zed:setVariable('isRavagerZed', 'false');
-			end
-		end
-    end
-end
 
 Commands.RavagerZed.KnockDown = function(args)
     local source = getPlayer();

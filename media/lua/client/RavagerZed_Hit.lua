@@ -8,10 +8,7 @@ function RavagerZed.hitZed(zed, pl, part, wpn)
 		zed:setAvoidDamage(true)
 		local hp = zed:getHealth()
 		if hp then
-			if isDebugEnabled() then
-				zed:SayDebug(tostring(hp))
-				print(tostring(hp))
-			end
+	
 
 			if hp < 0.15 then
 				zed:setAvoidDamage(false)
@@ -41,7 +38,12 @@ function RavagerZed.hitZed(zed, pl, part, wpn)
 
 			if not RavagerZed.isUnarmed(pl) then
 				zed:setHealth(zed:getHealth() - healthDmg)
-				zed:update();
+				zed:update()
+
+				if  getCore():getDebug() then
+					zed:addLineChatElement(tostring(zed:getHealth()))
+					print(tostring(zed:getHealth()))
+				end
 			end
 
 		end

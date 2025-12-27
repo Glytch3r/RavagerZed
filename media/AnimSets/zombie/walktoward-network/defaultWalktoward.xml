@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <animNode>
 	<m_Name>defaultWalktoward</m_Name>
-	<m_SpeedScale>0.80</m_SpeedScale>
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
+	<m_SpeedScale>0.80</m_SpeedScale>
 	<m_BlendTime>0.35</m_BlendTime>
 	<m_randomAdvanceFraction>0.25</m_randomAdvanceFraction>
 	<m_Conditions>

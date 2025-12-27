@@ -7,6 +7,9 @@
 	<m_Looped>false</m_Looped>
 	<m_BlendTime>0.40</m_BlendTime>
 
+	<m_UpperOnly>false</m_UpperOnly>
+	<m_EarlyBlendOut>false</m_EarlyBlendOut>
+
 	<m_Conditions>
 		<m_Name>hitreaction</m_Name>
 		<m_Type>STRING</m_Type>

@@ -1,17 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<animNode x_extends="defaultLunge.xml">
-	<m_Name>Ravager_lunge</m_Name>
+<animNode x_extends="Ravager_sprint2.xml">
+	<m_Name>Ravager_sprintWalk2</m_Name>
 	<m_AnimName>Ravager_Walk</m_AnimName>
-	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
-	<m_SpeedScale>0.64</m_SpeedScale>
-
-	<m_Priority>4</m_Priority>
+	<m_SpeedScale>1.04</m_SpeedScale>
 	<m_Conditions>
-		<m_Name>isRavagerZed</m_Name>
-		<m_Type>BOOL</m_Type>
-		<m_BoolValue>true</m_BoolValue>
+		<m_BoolValue>false</m_BoolValue>
 	</m_Conditions>
-
+	<m_Conditions />
+	<m_Conditions />
 	<m_Events>
 		<m_EventName>Footstep</m_EventName>
 		<m_TimePc>0.15</m_TimePc>
@@ -22,4 +18,11 @@
 		<m_TimePc>0.6</m_TimePc>
 		<m_ParameterValue>walk</m_ParameterValue>
 	</m_Events>
+
+	<m_Priority>4</m_Priority>
+	<m_Conditions>
+		<m_Name>isRavagerZed</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_BoolValue>true</m_BoolValue>
+	</m_Conditions>
 </animNode>

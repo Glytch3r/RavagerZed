@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<animNode>
-	<m_Name>inTrees</m_Name>
-	<m_AnimName>Zombie_WalkTrees</m_AnimName>
-	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
-	<m_SpeedScale>0.80</m_SpeedScale>
-	<m_BlendTime>0.20</m_BlendTime>
+<animNode x_extends="defaultWalktoward.xml">
+	<m_Name>Ravager_walktoward4</m_Name>
+	<m_AnimName>Ravager_Walk</m_AnimName>
+	<m_SpeedScale>0.60</m_SpeedScale>
+	<m_Conditions />
 	<m_Conditions>
-		<m_Name>intrees</m_Name>
-		<m_Type>BOOL</m_Type>
-		<m_BoolValue>true</m_BoolValue>
+		<m_Name>zombieWalkType</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_StringValue>4</m_StringValue>
 	</m_Conditions>
 	<m_Events>
 		<m_EventName>Footstep</m_EventName>
