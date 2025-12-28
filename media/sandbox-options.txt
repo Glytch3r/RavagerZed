@@ -10,17 +10,6 @@ option RavagerZed.SFXRate
     type = double, min = 0, max = 100, default = 0.8,
 	page = RavagerZed, translation = RavagerZed_SFXRate,
 }
-option RavagerZed.DistToChase
-{
-	type = double,	 min = 0,  max = 40,  default = 6,
-	page = RavagerZed, translation = RavagerZed_DistToChase,
-}
-
-option RavagerZed.SeenTime
-{
-	type = double,	 min = 0,  max = 40,  default = 4,
-	page = RavagerZed, translation = RavagerZed_SeenTime,
-}
 
 option RavagerZed.HP
 {
