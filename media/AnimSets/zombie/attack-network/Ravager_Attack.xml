@@ -9,6 +9,11 @@
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>
+	<m_Conditions>
+		<m_Name>Ravager_Slam</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_BoolValue>false</m_BoolValue>
+	</m_Conditions>
 
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
 	<m_Looped>false</m_Looped>
@@ -25,15 +30,11 @@
 		<m_TimePc>0.2</m_TimePc>
 		<m_ParameterValue></m_ParameterValue>
 	</m_Events>	
-	<m_Conditions>
-		<m_Name>Ravager_Slam</m_Name>
-		<m_Type>BOOL</m_Type>
-		<m_BoolValue>false</m_BoolValue>
-	</m_Conditions>
+
 	<m_Events>
 		<m_EventName>SetVariable</m_EventName>
 		<m_Time>Start</m_Time>
-		<m_ParameterValue>PlayerHitReaction=Ravager_Attack</m_ParameterValue>
+		<m_ParameterValue>PlayerHitReaction=Bite</m_ParameterValue>
 	</m_Events>
 
 	<m_Events>
@@ -41,4 +42,5 @@
 		<m_Time>End</m_Time>
 		<m_ParameterValue>ZombieBiteDone=true</m_ParameterValue>
 	</m_Events>
+
 </animNode>

@@ -44,6 +44,8 @@ function RavagerZed.hitZed(zed, pl, part, wpn)
 					zed:addLineChatElement(tostring(zed:getHealth()))
 					print(tostring(zed:getHealth()))
 				end
+			else
+				zed:setVariable("Ravager_Slam", false)
 			end
 
 		end

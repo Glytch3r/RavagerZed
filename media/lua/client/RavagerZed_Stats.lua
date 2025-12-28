@@ -66,11 +66,13 @@ function RavagerZed.setStats(zed)
 
 
             --RavagerZed.setTurnSpeed(zed, 2)
-            zed:setVariable('isRavagerZed', 'true')
-            zed:setWalkType('Ravager')
+            zed:setVariable('isRavagerZed', true)
+ 
+            
+         --[[    zed:setWalkType('Ravager') ]]
             zed:makeInactive(true);
             zed:makeInactive(false);
-            
+            --zed:setNoTeeth(true)
             --zed:dressInPersistentOutfit("RavagerZed")
             RavagerZed.cleanUp(zed)
             --zed:setTurnDelta(0.5)

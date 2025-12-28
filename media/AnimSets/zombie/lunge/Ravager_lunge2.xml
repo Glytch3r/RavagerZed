@@ -1,17 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <animNode x_extends="defaultLunge.xml">
-	<m_Name>Ravager_lunge</m_Name>
+	<m_Name>Ravager_lunge2</m_Name>
 	<m_AnimName>Ravager_Walk</m_AnimName>
-
-	<m_Priority>4</m_Priority>
-	<m_Conditions>
-		<m_Name>isRavagerZed</m_Name>
-		<m_Type>BOOL</m_Type>
-		<m_BoolValue>true</m_BoolValue>
-	</m_Conditions>
-
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
-	<m_SpeedScale>0.64</m_SpeedScale>
+	<m_Conditions />
+	<m_Conditions>
+		<m_Name>zombieWalkType</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_StringValue>3</m_StringValue>
+	</m_Conditions>
 	<m_Events>
 		<m_EventName>Footstep</m_EventName>
 		<m_TimePc>0.15</m_TimePc>
@@ -22,5 +19,12 @@
 		<m_TimePc>0.6</m_TimePc>
 		<m_ParameterValue>walk</m_ParameterValue>
 	</m_Events>
-</animNode>
 
+	<m_Priority>4</m_Priority>
+	<m_Conditions>
+		<m_Name>isRavagerZed</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_BoolValue>true</m_BoolValue>
+	</m_Conditions>
+
+</animNode>
