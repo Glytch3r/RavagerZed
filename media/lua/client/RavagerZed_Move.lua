@@ -176,14 +176,18 @@ function RavagerZed.checkWalkableSq()
 	end
 end
 
-function RavagerZed.moveToXYZ(zed, x, y, z)
-	--zed:pathToLocation(x, y, z)
-	zed:getPathFindBehavior2():pathToLocation(x, y, z)
-	local sq = getCell():getOrCreateGridSquare(x, y, z)
-	if not sq:TreatAsSolidFloor() and sq:getZ() == zed:getZ() then
-		zed:setVariable("bPathfind", false)
-		zed:setVariable("bMoving", true)
-	end
-	--zed:faceLocation(x, y);
-end
 
+function RavagerZed.moveToXYZ(zed, x, y, z)
+    if not zed or not x or not y or not z then return end
+    local pl = getPlayer()
+    if not pl then return end   
+    local sq = getCell():getOrCreateGridSquare(x, y, z)
+    if not sq then return end
+    if zed:getSquare() ~= sq then
+        zed:pathToLocation(sq:getX(), sq:getY(), sq:getZ())
+    end
+    if sq:getZ() == zed:getSquare():getZ() then
+        zed:setVariable("bPathfind", true)
+        zed:setVariable("bMoving", false)
+    end
+end

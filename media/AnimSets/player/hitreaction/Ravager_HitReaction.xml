@@ -4,16 +4,20 @@
 	<m_AnimName>Bob_HitReact_01</m_AnimName>
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
 
+	<m_SpeedScale>2</m_SpeedScale>
+	<m_BlendTime>0.4</m_BlendTime>
+	<m_BlendOutTime>0.4</m_BlendOutTime>
+
 	<m_Conditions>
 		<m_Name>hitreaction</m_Name>
 		<m_Type>STRING</m_Type>
 		<m_StringValue>Ravager_Attack</m_StringValue>
 	</m_Conditions>
 
+
 	<m_Looped>false</m_Looped>
 	<m_SyncTrackingEnabled>false</m_SyncTrackingEnabled>
-	<m_BlendTime>0.10</m_BlendTime>
-	<m_BlendOutTime>0.20</m_BlendOutTime>
+
 	<m_SubStateBoneWeights>
 		<boneName>Bip01</boneName>
 		<weight>0.20</weight>

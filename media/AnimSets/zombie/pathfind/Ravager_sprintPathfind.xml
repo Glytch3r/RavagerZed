@@ -1,19 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <animNode>
-	<m_Name>Ravager_lunge2</m_Name>
+	<m_Name>Ravager_sprintPathfind</m_Name>
 	<m_AnimName>Ravager_Run</m_AnimName>
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
-	<m_SpeedScale>1</m_SpeedScale>
-
-	<m_Conditions>
-		<m_Name>targetSeenTime</m_Name>
-		<m_Type>GTR</m_Type>
-		<m_FloatValue>5</m_FloatValue>
-	</m_Conditions>
+	<m_BlendTime>0.20</m_BlendTime>
 
 	<m_Priority>4</m_Priority>
 	<m_Conditions>
-		<m_Name>isRavagerZed</m_Name>
+		<m_Name>Ravager_Slam</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_BoolValue>true</m_BoolValue>
+	</m_Conditions>
+
+
+	<m_SpeedScale>0.80</m_SpeedScale>
+	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
+	<m_BlendTime>0.20</m_BlendTime>
+	<m_Conditions>
+		<m_Name>bMoving</m_Name>
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>
@@ -21,14 +25,11 @@
 	<m_Events>
 		<m_EventName>Footstep</m_EventName>
 		<m_TimePc>0.15</m_TimePc>
-		<m_ParameterValue>walk</m_ParameterValue>
+		<m_ParameterValue>sprint</m_ParameterValue>
 	</m_Events>
 	<m_Events>
 		<m_EventName>Footstep</m_EventName>
 		<m_TimePc>0.6</m_TimePc>
-		<m_ParameterValue>walk</m_ParameterValue>
+		<m_ParameterValue>sprint</m_ParameterValue>
 	</m_Events>
-
-
-
 </animNode>

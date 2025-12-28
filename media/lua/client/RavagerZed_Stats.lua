@@ -39,13 +39,20 @@ function RavagerZed.TempMarker(sq, isGood)
 	if isGood then
 		r, g, b = 0.4,0.4,1
 	end
-	local mark = getWorldMarkers():addGridSquareMarker("circle_center", "circle_only_highlight", sq,r,g,b, true, 0.5)
-	TestMarkers.add(mark);
-	timer:Simple(sec, function()
-		mark:remove()
-	end)
-end
+    if RavagerZed.targSqMark then
 
+        RavagerZed.targSqMark:remove()
+        RavagerZed.targSqMark = nil
+    end
+	RavagerZed.targSqMark = getWorldMarkers():addGridSquareMarker("circle_center", "circle_only_highlight", sq,r,g,b, true, 0.5)
+	TestMarkers.add(RavagerZed.targSqMark);
+    timer:Simple(5, function()
+        if  RavagerZed.targSqMark then
+            RavagerZed.targSqMark:remove()
+            RavagerZed.targSqMark = nil
+        end
+    end)
+end
 
 
 function RavagerZed.setStats(zed)
@@ -64,14 +71,15 @@ function RavagerZed.setStats(zed)
             sandOpt:set("ZombieLore.Sight",1) 		-- 1 eagle 				2 normal 			3 poor 				4 random
             sandOpt:set("ZombieLore.Hearing",1) 	-- 1 pinpoint 			2 normal 			3 poor 				4 random
 
-
+            
             --RavagerZed.setTurnSpeed(zed, 2)
             zed:setVariable('isRavagerZed', true)
- 
+           -- zed:setUseless(true)
             
          --[[    zed:setWalkType('Ravager') ]]
             zed:makeInactive(true);
             zed:makeInactive(false);
+            
             --zed:setNoTeeth(true)
             --zed:dressInPersistentOutfit("RavagerZed")
             RavagerZed.cleanUp(zed)

@@ -90,52 +90,119 @@ function RavagerZed.isShouldSprint(zed)
     return zed:getVariableBoolean('Ravager_Slam')
 end
 
-function RavagerZed.coreFunc(zed)
-    if not zed then return end
+function RavagerZed.slowChase(zed)
+	if not zed then return end
+	if zed:getTarget() then return end
+    
+	local closePl = RavagerZed.getClosestPl(zed)
+	if not closePl  then return end
 
-    if RavagerZed.isRavagerZed(zed) then
-        if zed:getVariableBoolean('Ravager_Slam') == true then
-            RavagerZed.setSprinter(zed, true)
-            if getCore():getDebug() then
-                zed:addLineChatElement("Danger!")
-            end
-        end
-        zed:setVariable('isRavagerZed', true)
+	local zsq = zed:getSquare()
+	local psq = closePl:getSquare()
+	if not zsq or not psq then return end
+	if zsq:getZ() ~= psq:getZ() then return end
 
-        if zed:getHitReaction() == "Ravager_Slam" then                
-            zed:setVariable('Ravager_Slam', true)
-        
-        end
-
-        if not zed:getModData()['RavagerZed_Init'] then
-            RavagerZed.setStats(zed)
-        end
---[[ 
-        local isShouldSprint = RavagerZed.isShouldSprint(zed)
-        local isSprinter = RavagerZed.isSprinter(zed)
-        if isShouldSprint ~= isSprinter then
-            RavagerZed.setSprinter(zed, isShouldSprint)
-        end ]]
-        
-    else
-        if zed:getVariableBoolean('isRavagerZed') then
-            zed:setVariable('isRavagerZed', false)
-            zed:getModData()['RavagerZed_Init'] = nil
-        end
+	local radius = 2
+	local tx = psq:getX() + ZombRand(-radius, radius + 1)
+	local ty = psq:getY() + ZombRand(-radius, radius + 1)
+	local tz = psq:getZ()
+	local targetSq = getCell():getGridSquare(tx, ty, tz)
+	if not targetSq then return end
+    if getCore():getDebug() then  
+        RavagerZed.TempMarker(targetSq, false)
     end
+	local x = zsq:getX()
+	local y = zsq:getY()
+	local z = zsq:getZ()
+    RavagerZed.moveToXYZ(zed, x, y, z)
+end
+
+function RavagerZed.coreFunc(zed)
+	if not zed then return end
+
+	if RavagerZed.isRavagerZed(zed) then
+		local md = zed:getModData()
+
+		if not md.RavagerZed_Init then
+			RavagerZed.setStats(zed)
+			md.RavagerZed_Init = true
+			--md.slowTick = 0
+		end
+
+		if not zed:getVariableBoolean('isRavagerZed') then
+			zed:setVariable('isRavagerZed', true)
+		end
+
+		if zed:getHitReaction() == "Ravager_Slam" or  zed:getVariableBoolean("hitreaction") == "Ravager_Slam"  then
+			zed:setVariable('Ravager_Slam', true)
+		end
+
+   
+--[[ 		md.slowTick = md.slowTick + 1
+        if zed:getTarget() ~= nil then 
+            zed:setUseless(false)
+        else
+            zed:setUseless(true)    
+            if md.slowTick % 250 == 0 then
+                RavagerZed.slowChase(zed)
+            end
+        end ]]
+
+
+	else
+		if zed:getVariableBoolean('isRavagerZed') then
+			zed:setVariable('isRavagerZed', false)
+			zed:getModData().RavagerZed_Init = nil
+			zed:getModData().slowTick = nil
+		end
+	end
 end
 Events.OnZombieUpdate.Remove(RavagerZed.coreFunc)
 Events.OnZombieUpdate.Add(RavagerZed.coreFunc)
 
 
 
+
+function RavagerZed.setStag(bool)
+    local pl = getPlayer() 
+	pl:setIgnoreInputsForDirection(bool)
+	pl:setIgnoreMovement(bool) 
+	pl:setBlockMovement(bool)    
+end
+
+
+function RavagerZed.zedChoke(zed, targ, weapon, damage)
+    if instanceof(zed, "IsoZombie") and instanceof(targ, "IsoPlayer")  then
+        if RavagerZed.isRavagerZed(zed) then
+            if zed:getVariableBoolean('Ravager_Slam') == true then         
+                zed:setVariable('Ravager_Slam', false)                
+            end
+        end
+    end
+end
+Events.OnWeaponHitCharacter.Remove(RavagerZed.zedChoke)
+Events.OnWeaponHitCharacter.Add(RavagerZed.zedChoke)
+
 -----------------------            ---------------------------
 function RavagerZed.playerFunc(pl)
     if pl:getHitReaction() == "Ravager_SlamReact" then
+        if not pl:isIgnoreInputsForDirection() then
+            if getCore():getDebug() then
+                pl:addLineChatElement("Danger!")
+            end
+            RavagerZed.setStag(true)
+            timer:Simple(2, function()  RavagerZed.setStag(false) end)
+        end
+        
+   
+    end
+--[[     if pl:getVariableBoolean("hitreaction") == "Ravager_SlamReact" then
         if getCore():getDebug() then
             pl:addLineChatElement("Danger!")
+           
         end
-    end
+        --pl:setKnockedDown(true)
+    end ]]
 end
 Events.OnPlayerUpdate.Remove(RavagerZed.playerFunc)
 Events.OnPlayerUpdate.Add(RavagerZed.playerFunc)

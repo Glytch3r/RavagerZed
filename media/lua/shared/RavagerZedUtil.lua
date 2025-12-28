@@ -38,3 +38,29 @@ function RavagerZed.isClosestPl(pl, zed)
 	end
 	return false
 end
+
+function RavagerZed.getClosestPl(zed)
+	if not RavagerZed.isRavagerZed(zed) then return end
+	if not zed then return end
+
+	local players = getOnlinePlayers()
+	if not players then return end
+
+	local closestPl = nil
+	local closestDist = nil
+
+	for i = 0, players:size() - 1 do
+		local pl = players:get(i)
+		if pl and not pl:isDead() then
+			local dist = RavagerZed.checkDist(pl, zed)
+			if not closestDist or dist < closestDist then
+				if not pl:isInvisible() and not pl:isGhostMode() then
+					closestDist = dist
+					closestPl = pl
+				end
+			end
+		end
+	end
+
+	return closestPl
+end
