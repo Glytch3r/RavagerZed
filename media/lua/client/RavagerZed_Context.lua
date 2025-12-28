@@ -135,12 +135,12 @@ function RavagerZed.Context(player, context, worldobjects)
 		opt:addSubMenu(EmoteSub, Emoteopt)
 
 
-		Emoteopt:addOption("Ravager_FloorFront", worldobjects, function()
-			pl:playEmote('Ravager_FloorFront')
+		Emoteopt:addOption("Ravager_Taunt", worldobjects, function()
+			pl:playEmote('Ravager_Taunt')
 		end);
 
-		Emoteopt:addOption("Ravager_FloorBack", worldobjects, function()
-			pl:playEmote('Ravager_FloorBack')
+		Emoteopt:addOption("Ravager_ChokeSlam", worldobjects, function()
+			pl:playEmote('Ravager_ChokeSlam')
 		end);
 
 		-----------------------            ---------------------------
