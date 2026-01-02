@@ -37,6 +37,14 @@ Commands.RavagerZed.isRavagerZed = function(player, args)
     sendServerCommand('RavagerZed', 'isRavagerZed', {id = playerId, isRavagerZed = args.isRavagerZed,   zedID = args.zedID})
 end
 
+Commands.RavagerZed.hitreaction = function(player, args)
+    local playerId = player:getOnlineID();
+    local hitreaction = args.hitreaction
+    if hitreaction then
+        sendServerCommand('RavagerZed', 'hitreaction', {hitreaction = tostring(hitreaction), zedID = args.zedID})
+    end
+end
+
 Commands.RavagerZed.KnockDown = function(player, args)
     local playerId = player:getOnlineID();
     sendServerCommand('RavagerZed', 'KnockDown', {id = playerId, zedID = args.zedID})

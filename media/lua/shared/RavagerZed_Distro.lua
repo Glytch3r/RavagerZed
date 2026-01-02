@@ -22,7 +22,7 @@ require 'NPCs/ZombiesZoneDefinition'
 RavagerZed = RavagerZed or {}
 MapSymbolDefinitions.getInstance():addTexture("RavagerZed", "media/ui/LootableMaps/RavagerZed_Symbol.png")
 Events.OnPostDistributionMerge.Add(function()
-   local rate = SandboxVars.RavagerZed.SpawnRate or 1
+   local rate = SandboxVars.RavagerZed.SpawnRate
    if rate > 0 then
       table.insert(ZombiesZoneDefinition.Default,{name = "RavagerZed", chance=rate, });
    end

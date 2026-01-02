@@ -223,6 +223,17 @@ end
 
 -----------------------            ---------------------------
 
+Commands.RavagerZed.hitreaction = function(args)
+    local zedID = args.zedID
+    if type(zedID) == 'string' then zedID = tonumber(zedID) end
+    local zed = RavagerZed.findzedID(zedID)
+    if zed ~= nil then
+        local hitreaction = args.hitreaction
+        if hitreaction then 
+            zed:setVariable('hitreaction', tostring(args.hitreaction));
+        end
+    end
+end
 Commands.RavagerZed.isRavagerPl = function(args)
     local source = getPlayer();
     local player = getPlayerByOnlineID(args.id)
@@ -276,3 +287,4 @@ Events.OnServerCommand.Add(function(module, command, args)
 		Commands[module][command](args)
 	end
 end)
+

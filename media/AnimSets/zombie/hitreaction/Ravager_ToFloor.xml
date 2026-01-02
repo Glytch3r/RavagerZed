@@ -7,7 +7,7 @@
 	<m_SpeedScale>0.96</m_SpeedScale>
 	<m_BlendTime>0.10</m_BlendTime>
 
-	<m_Priority>4</m_Priority>
+	<m_Priority>5</m_Priority>
 	<m_Conditions>
 		<m_Name>isRavagerZed</m_Name>
 		<m_Type>BOOL</m_Type>

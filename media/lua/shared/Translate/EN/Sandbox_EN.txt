@@ -9,9 +9,7 @@ Sandbox_EN = {
 	Sandbox_RavagerZed_SFXRate = "SFX Rate",
 	Sandbox_RavagerZed_HP = "HP",
 	Sandbox_RavagerZed_dmgMult = "Damage Modifier",
-
-
-
+	Sandbox_RavagerZed_HitByPlayerReact = "Hit By Player React Chance",
 
 }
 

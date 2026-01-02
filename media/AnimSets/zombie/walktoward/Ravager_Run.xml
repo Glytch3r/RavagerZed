@@ -3,15 +3,15 @@
 	<m_Name>Ravager_Run</m_Name>
 	<m_AnimName>Ravager_Run</m_AnimName>
 
-	<m_Priority>4</m_Priority>
+	<m_Priority>5</m_Priority>
 	<m_Conditions>
 		<m_Name>isRavagerZed</m_Name>
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>
-<!-- 	<m_Conditions>
+	<m_Conditions>
 		<m_Name>shouldSprint</m_Name>
-	</m_Conditions> -->
+	</m_Conditions>
 	<m_randomAdvanceFraction>0.25</m_randomAdvanceFraction>
 	<m_Conditions>
 		<m_Name>bhastarget</m_Name>
@@ -22,6 +22,12 @@
 		<m_Name>intrees</m_Name>
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>false</m_BoolValue>
+	</m_Conditions>
+
+	<m_Conditions>
+		<m_Name>zombieWalkType</m_Name>
+		<m_Type>STRNEQ</m_Type>
+		<m_StringValue>placeholder</m_StringValue>
 	</m_Conditions>
 
 <!-- 	<m_Conditions>

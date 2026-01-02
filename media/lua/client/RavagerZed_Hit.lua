@@ -1,3 +1,11 @@
+RavagerZed = RavagerZed or {}
+function RavagerZed.getChance(pl)	
+	if RavagerZed.isClosestPl(pl, zed) then
+		local chance = SandboxVars.RavagerZed.HitByPlayerReact
+		return RavagerZed.doRoll(chance)
+	end
+	return false
+end
 
 function RavagerZed.hitZed(zed, pl, part, wpn)
     if not zed or not pl then return end
@@ -21,17 +29,30 @@ function RavagerZed.hitZed(zed, pl, part, wpn)
 		end
 
 		
-		if not zed:isUnderVehicle()  then
+		if not zed:isUnderVehicle() then
+			local chance = RavagerZed.getChance(pl)
+			if chance then 
+				if zed:getPlayerAttackPosition() == 'BEHIND' then
+					zed:setVariable("hitreaction", "Ravager_Hit")
+					if isClient() then
+						sendClientCommand("RavagerZed", "hitreaction", {hitreaction = "Ravager_Hit", zedID = zed:getOnlineID()})
+					else
+						zed:setVariable("hitreaction", "Ravager_Hit")
+					end
 
-			if zed:getPlayerAttackPosition() == 'BEHIND' then
-				zed:setVariable("hitreaction", "Ravager_Hit")
-			else
-				if RavagerZed.isUnarmed(pl) then
-					zed:setVariable("hitreaction", "Ravager_ToFloor")
+				else
+					if RavagerZed.isUnarmed(pl) then
+			
+						if isClient() then
+							sendClientCommand("RavagerZed", "hitreaction", {hitreaction = "Ravager_ToFloor", zedID = zed:getOnlineID()})
+						else
+							zed:setVariable("hitreaction", "Ravager_ToFloor")
+						end
+
+					end
+					--zed:setVariable("hitreaction", "Ravager_ToFloor")					
 				end
-				--zed:setVariable("hitreaction", "Ravager_ToFloor")					
 			end
-
 			local varHP = SandboxVars.RavagerZed.HP
 			local mult = SandboxVars.RavagerZed.dmgMult
 			local healthDmg = mult / varHP

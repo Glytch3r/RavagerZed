@@ -7,7 +7,7 @@
 	<m_SpeedScale>1</m_SpeedScale>
 	<m_BlendTime>0.20</m_BlendTime>
 
-	<m_Priority>4</m_Priority>
+	<m_Priority>5</m_Priority>
 	<m_Conditions>
 		<m_Name>isRavagerPl</m_Name>
 		<m_Type>BOOL</m_Type>

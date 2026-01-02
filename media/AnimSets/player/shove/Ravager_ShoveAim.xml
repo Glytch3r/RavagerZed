@@ -6,7 +6,7 @@
 	<m_Scalar2>ShoveAimY</m_Scalar2>
 	<m_Conditions />
 
-	<m_Priority>4</m_Priority>
+	<m_Priority>5</m_Priority>
 	<m_Conditions>
 		<m_Name>isRavagerPl</m_Name>
 		<m_Type>BOOL</m_Type>

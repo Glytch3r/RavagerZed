@@ -18,6 +18,7 @@
 		<m_StringValue>Ravager_SlamReact</m_StringValue>
 	</m_Conditions>
 
+
 <!-- 	<m_Events>
 		<m_EventName>SetVariable</m_EventName>
 		<m_Time>End</m_Time>

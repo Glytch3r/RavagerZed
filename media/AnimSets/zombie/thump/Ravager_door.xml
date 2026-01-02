@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<animNode x_extends="Ravager_DoorBang.xml">
+	<m_Name>Ravager_door</m_Name>
+	<m_AnimName>Ravager_Attack</m_AnimName>
+	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
+	<m_Conditions>
+		<m_Name>ThumpType</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_StringValue>Door</m_StringValue>
+	</m_Conditions>
+
+	<m_Events>
+		<m_EventName>ThumpFrame</m_EventName>
+		<m_TimePc>0.55</m_TimePc>
+		<m_ParameterValue></m_ParameterValue>
+	</m_Events>
+</animNode>
